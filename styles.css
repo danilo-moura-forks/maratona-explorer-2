@@ -1,0 +1,161 @@
+/* 
+	seletor universal (todos os elementos da página)
+	define margens e espaçamentos como 0px para facilitar mudanças posteriores
+*/
+* { 
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box; /* define que as margens e espaçamentos serão calculados a patir do tamanho da caixa (300px) e não da página inteira */
+}
+
+/* reuso de código através de variáveis */
+html {
+	--bg-color: #EDF2FF;
+	--text-color: #00082F;
+	--button-color: #4263EB;
+	--button-color-hover: #364FC7;
+	--image-border-color: #EDF2FF;
+}
+/* retira padrões para todos os links da página */
+a {
+	text-decoration: none; /* retira o sublinhado padrão para os links */
+}
+
+/* afeta todos os elementos que estão dentro do body */
+body {
+	background: var(--bg-color);
+	color: var(--text-color);
+	/* Acrescenta fontes do Google Fonts */
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Classe “background-green”  “genérica” - teste de CASCADING */
+.background-green {
+	background: red;
+}
+ 
+/* Classes para gerenciar as variações de layout */
+body.tema-azul-escuro {
+	--bg-color: #00082F;
+	--text-color: #EDF2FF;
+	--button-color: #4263EB;
+	--button-color-hover: #364FC7;
+	--image-border-color: #4263EB;
+}
+body.tema-rosa {
+	--bg-color: #FFF0F6;
+	--text-color: #1F000B;
+	--button-color: #D6336C;
+	--button-color-hover: #A61E4D;
+	--image-border-color: #D6336C;
+}
+body.tema-rosa-escuro {
+	--bg-color: #1F000B;
+	--text-color: #FFF0F6;
+	--button-color: #D6336C;
+	--button-color-hover: #A61E4D;
+	--image-border-color: #D6336C;
+}
+body.tema-verde {
+	--bg-color: #BDFABB;
+	--text-color: #1F000B;
+	--button-color: #3CBC48;
+	--button-color-hover: #188623;
+	--image-border-color: #188623;
+}
+body.tema-verde-escuro {
+	--bg-color: #004910;
+	--text-color: #FFF0F6;
+	--button-color: #3CBC48;
+	--button-color-hover: #188623;
+	--image-border-color: #3CBC48;
+}
+ /* classe do div principal */
+ .container {
+	 border: 7px transparent solid; /* cria borda com 7px, transparente e sólida */
+	 text-align: center; /* alinha todos os elementos no centro */
+	 width: 300px; /* define a largura em 300px */
+	 margin: 60px auto; /* define as margens top/bottom em 60px e right/left em "auto" */
+}
+
+ /* define uma largura padrão para todas as imagens */
+ img {
+	 width: 100%; /* terá a mesma largura (100%) da caixa onde a imagens está contida */
+ }
+
+ img.foto-perfil {
+	 border-radius: 50%;
+	 width: 120px;
+	 height: 120px;
+	 border: var(--image-border-color) solid 4px;
+	 padding: 3.7px;
+ }
+
+/* gerencia estilo dos títulos h1 */
+h1 {
+	font-size: 32px;
+	/* não precisa, pois já está definido no body
+		color: var(--text-color); 
+	*/
+	margin: 24px 0px 8px 0;
+	/* border: 5px yellow solid; */
+}
+
+ /* gerencia estilo das listas */
+ ul {
+	 list-style: none; /* retira as marcações dos itens das listas */
+	 margin: 48px 0;
+ }
+
+ul li a {
+	height: 53px;
+	/* border: 5px green solid; */
+	display: flex; /* muda o tipo de display de "inline" para "flex" */
+	align-items: center; /* alinhamento vertical */
+	justify-content: center; /* alinhamento horizontal */
+	background-color: var(--button-color);
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	
+	margin-bottom: 16px;
+	border-radius: 6px; /* arredondamento da borda */
+
+	transition: background 400ms; /* altera o tempo de transição entre as cores dos botões */
+}
+
+/* pseudo-class */
+ul li a:hover {
+	background: var(--button-color-hover); /* altera a cor do botão quando mouse passa sobre o elemento */
+}
+
+footer {
+	font-weight: 500;
+	font-size: 12px;
+	/* não precisa, pois já está definido no body
+		color: #00082F;
+	*/
+	opacity: 0.6 ;
+	transition: opacity 400ms; /* suaviza a transição da opacidade */
+}
+
+/* altera a opacidade do rodapé para 1 quando o mouse passa pelo elemento */
+footer:hover {
+	opacity: 1;
+}
+
+footer a {
+	/* Tenho de deixar porque o "a" tem precedência sobre o body */
+	color: var(--text-color);
+}
+.instagram-address {
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 400;
+	/* não precisa, pois já está definido no body
+		color: #00082F;
+	*/
+	opacity: 0.8;
+	font-size: 18px; 
+}
+
+ 
